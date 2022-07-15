@@ -1,0 +1,58 @@
+> use dbnumbersgame
+switched to db dbnumbersgame
+> db.createCollection("estudiantes")
+{ "ok" : 1 }
+> show collections
+estudiantes
+> show dbs
+admin          0.000GB
+config         0.000GB
+dbnumbersgame  0.000GB
+local          0.000GB
+
+>db.estudiantes.insert({"id_estudiante":1, "nombre":"Mercy", "apellido":"Arrobo", "edad":3, 
+"profesor":[{"id_profesor":1, "nombre":"Fabiola", "apellido":"Castillo"}], 
+"aula":[{"numero_aula":5}],
+"puntuacion":[{"valor":10}]})
+WriteResult({ "nInserted" : 1 })
+
+>db.estudiantes.insert({"id_estudiante":2, "nombre":"Maria", "apellido":"Arauz", "edad":3, 
+"profesor":[{"id_profesor":1, "nombre":"Fabiola", "apellido":"Castillo"}], 
+"aula":[{"numero_aula":5}],
+"puntuacion":[{"valor":9}]})
+WriteResult({ "nInserted" : 1 })
+
+>db.estudiantes.insert({"id_estudiante":3, "nombre":"Marcos", "apellido":"Intriago", "edad":4, 
+"profesor":[{"id_profesor":2, "nombre":"Karla", "apellido":"Castaño"}], 
+"aula":[{"numero_aula":10}],
+"puntuacion":[{"valor":9}]})
+WriteResult({ "nInserted" : 1 })
+
+>db.estudiantes.insert({"id_estudiante":4, "nombre":"Luis", "apellido":"Lara", "edad":3, 
+"profesor":[{"id_profesor":2, "nombre":"Karla", "apellido":"Castaño"}], 
+"aula":[{"numero_aula":10}],
+"puntuacion":[{"valor":10}]})
+WriteResult({ "nInserted" : 1 })
+
+>db.estudiantes.insert({"id_estudiante":5, "nombre":"Angie", "apellido":"Moreno", "edad":3, 
+"profesor":[{"id_profesor":3, "nombre":"Lady", "apellido":"Moreno"}], 
+"aula":[{"numero_aula":15}],
+"puntuacion":[{"valor":10}]})
+WriteResult({ "nInserted" : 1 })
+
+>db.estudiantes.insert({"id_estudiante":6, "nombre":"Karelys", "apellido":"Cayambe", "edad":3, 
+"profesor":[{"id_profesor":3, "nombre":"Lady", "apellido":"Moreno"}], 
+"aula":[{"numero_aula":15}],
+"puntuacion":[{"valor":9}]})
+WriteResult({ "nInserted" : 1 })
+
+Exportación de la colección 
+
+Microsoft Windows [Versión 10.0.22000.675]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\maria>cd C:\MongoDB\Tools\100\bin
+
+C:\MongoDB\Tools\100\bin>mongoexport --db dbnumbersgame -c estudiantes --out datos.json
+2022-07-14T22:58:11.458-0500    connected to: mongodb://localhost/
+2022-07-14T22:58:11.553-0500    exported 6 records
